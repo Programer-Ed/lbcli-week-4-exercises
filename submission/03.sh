@@ -10,8 +10,7 @@ transaction="01000000000101c8b0928edebbec5e698d5f86d0474595d9f6a5b2e4e3772cd9d10
 txid="77efbd235f00d1d92c77e3e4b2a5f6d9954547d0865f8d695eecbbde8e92b0c8"
 vout=37
 
-change=$(bitcoin-cli -regtest getrawchangeaddress)
 
-rawtx=$(bitcoin-cli -regtest -named createrawtransaction inputs="[{\"txid\":\"$txid\",\"vout\":$vout}]" outputs="{\"2MvLcssW49n9atmksjwg2ZCMsEMsoj3pzUP\":0.2, \"$change\":0.0367, \"data\":\"627472757374206275696c6465722032303236\"}")
+rawtx=$(bitcoin-cli -regtest -named createrawtransaction inputs="[{\"txid\":\"$txid\",\"vout\":$vout}]" outputs="{\"2MvLcssW49n9atmksjwg2ZCMsEMsoj3pzUP\":0.2, \"data\":\"627472757374206275696c6465722032303236\"}")
 
 bitcoin-cli -regtest decoderawtransaction "$rawtx"

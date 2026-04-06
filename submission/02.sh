@@ -10,8 +10,8 @@ txid="77efbd235f00d1d92c77e3e4b2a5f6d9954547d0865f8d695eecbbde8e92b0c8"
 vout=37
 
 receiver_address="2MvLcssW49n9atmksjwg2ZCMsEMsoj3pzUP"
-change=$(bitcoin-cli -regtest getrawchangeaddress)
 
-rawtx=$(bitcoin-cli -regtest -named createrawtransaction inputs="[{\"txid\":\"$txid\",\"vout\":$vout}]" outputs="{\"$receiver_address\":0.2, \"$change\":0.0367}" locktime=2041)
+rawtx=$(bitcoin-cli -regtest -named createrawtransaction inputs="[{\"txid\":\"$txid\",\"vout\":$vout}]" outputs="{\"$receiver_address\":0.2}" locktime=2041)
 
-bitcoin-cli -regtest decoderawtransaction "$rawtx"
+echo $rawtx
+# bitcoin-cli -regtest decoderawtransaction "$rawtx"
