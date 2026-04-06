@@ -13,5 +13,5 @@ receiver_address="2MvLcssW49n9atmksjwg2ZCMsEMsoj3pzUP"
 
 rawtx=$(bitcoin-cli -regtest -named createrawtransaction inputs="[{\"txid\":\"$txid\",\"vout\":$vout}]" outputs="{\"$receiver_address\":0.2}" locktime=2041)
 
-echo $rawtx
-# bitcoin-cli -regtest decoderawtransaction "$rawtx"
+# echo $rawtx
+bitcoin-cli -regtest decoderawtransaction "$rawtx"
