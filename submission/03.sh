@@ -7,9 +7,9 @@ transaction="01000000000101c8b0928edebbec5e698d5f86d0474595d9f6a5b2e4e3772cd9d10
 # bitcoin-cli -regtest decoderawtransaction "$transaction"
 # echo -n "btrust builder 2026" | xxd -p
 
-txid="8d0e2816de0449ab13b339cf0a5e576c378fb3becb0cc3f185287939dd442c40"
+txid="23c19f37d4e92e9a115aab86e4edc1b92a51add4e0ed0034bb166314dde50e16"
 
 
-rawtx=$(bitcoin-cli -regtest -named createrawtransaction inputs="[{\"txid\":\"$txid\",\"vout\":0},{\"txid\":\"$txid\",\"vout\":1}]" outputs="{\"2MvLcssW49n9atmksjwg2ZCMsEMsoj3pzUP\":0.2, \"data\":\"627472757374206275696c6465722032303236\"}")
+rawtx=$(bitcoin-cli -regtest -named createrawtransaction inputs="[{\"txid\":\"$txid\",\"vout\":0},{\"txid\":\"$txid\",\"vout\":1}]" outputs="{\"data\":\"627472757374206275696c6465722032303236\",\"2MvLcssW49n9atmksjwg2ZCMsEMsoj3pzUP\":0.2}")
 
 echo $rawtx
